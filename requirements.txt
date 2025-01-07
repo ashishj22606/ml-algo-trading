@@ -1,0 +1,10 @@
+aiohttp
+nltk
+pandas
+python-dotenv
+scikit-learn
+streamlit
+numpy
+torch
+matplotlib
+requests
