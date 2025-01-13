@@ -1,0 +1,14 @@
+version: '3'
+services:
+    app:
+        build: .
+        ports:
+            - "8080:8080"
+        volumes:
+            - .:/app
+            - .env:/app/.env
+        environment:
+            FLASK_APP: app.py
+            FLASK_ENV: development
+            FLASK_DEBUG: 1
+        entrypoint: ["python3", "main.py"]
