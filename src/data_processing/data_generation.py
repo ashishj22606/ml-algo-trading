@@ -49,5 +49,3 @@ def data_generation():
     crypto_data = YFinanceUtils.fetch_multiple_data(tickers["cryptos"], "2022-01-01", "2022-12-31", interval="1d")
     save_to_csv(crypto_data, "src/data/crypto", "crypto")
 
-if __name__ == "__main__":
-    data_generation()

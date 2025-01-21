@@ -1,6 +1,6 @@
 import sys
 from dotenv import load_dotenv
-from src.data_processing import data_generation
+from src.data_processing.data_generation import data_generation
 
 load_dotenv()
 
