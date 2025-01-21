@@ -1,0 +1,4 @@
+{
+    "stocks": ["AAPL", "GOOGL", "MSFT", "AMZN", "META", "TSLA", "NVDA"],
+    "cryptos": ["BTC-USD", "ETH-USD", "DOGE-USD"]
+}
