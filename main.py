@@ -6,10 +6,12 @@ from src.models.regression_model import RegressionModel
 import glob
 import pandas as pd
 import os
+from src.evaluation.evaluator import ModelEvaluator
 
 load_dotenv()
 
 def main():
+    
     data_generation()
     
     # Load and preprocess stock and crypto data
@@ -47,6 +49,11 @@ def main():
     # Evaluate
     X_test = X_test[feature_names]  # Align test features
     predictions = reg_model.predict(X_test)
+    
+    evaluator = ModelEvaluator(model_name="RandomForestRegressor")
+    evaluation_results_ticker = evaluator.evaluate_by_ticker(y_test, predictions, test_data["Ticker"])
+    path = "src/data/RandomForestRegressor/random_forest_evaluation_results_by_ticker.json"
+    evaluator.save_results_by_ticker_json(evaluation_results_ticker, path)
 
     # Combine predictions with actual values and metadata
     test_set_predictions = test_data[['Date', 'Ticker']].copy()

@@ -4,3 +4,4 @@ venv
 src/data/*/*.csv
 .DS_Store
 .vscode
+src/data/RandomForestRegressor/random_forest_evaluation_results_by_ticker.json
