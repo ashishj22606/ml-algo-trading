@@ -7,6 +7,7 @@ import glob
 import pandas as pd
 import os
 from src.evaluation.evaluator import ModelEvaluator
+from src.evaluation.visualize_predictions import plot_actual_vs_predicted_by_ticker
 
 load_dotenv()
 
@@ -62,6 +63,9 @@ def main():
 
     # Sort results by Ticker and Date (descending)
     test_set_predictions = test_set_predictions.sort_values(by=['Ticker', 'Date'], ascending=[True, False])
+    
+    plot_actual_vs_predicted_by_ticker(test_set_predictions)
+    print("Plots saved to src/data/plots/")
 
     # Save predictions to CSV
     path = "src/data/RandomForestRegressor/test_set_predictions_with_dates.csv"
