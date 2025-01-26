@@ -1,0 +1,37 @@
+[
+    {
+        "model_name": "RandomForestRegressor",
+        "train_date": "2025-01-25T18:28:10.944272",
+        "n_estimators": 100,
+        "max_depth": null,
+        "train_data": "training_data.csv"
+    },
+    {
+        "model_name": "RandomForestRegressor",
+        "train_date": "2025-01-25T18:40:52.329747",
+        "n_estimators": 100,
+        "max_depth": null,
+        "train_data": "training_data.csv"
+    },
+    {
+        "model_name": "RandomForestRegressor",
+        "train_date": "2025-01-25T18:44:26.066894",
+        "n_estimators": 100,
+        "max_depth": null,
+        "train_data": "training_data.csv"
+    },
+    {
+        "model_name": "RandomForestRegressor",
+        "train_date": "2025-01-25T18:46:16.257272",
+        "n_estimators": 100,
+        "max_depth": null,
+        "train_data": "training_data.csv"
+    },
+    {
+        "model_name": "RandomForestRegressor",
+        "train_date": "2025-01-25T18:50:34.985405",
+        "n_estimators": 100,
+        "max_depth": null,
+        "train_data": "training_data.csv"
+    }
+]

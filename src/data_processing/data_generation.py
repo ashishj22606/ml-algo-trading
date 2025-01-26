@@ -2,6 +2,7 @@ import json
 import os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 from src.utils.yahoo_finance_api import YFinanceUtils
+from datetime import datetime
 
 def load_tickers(file_path: str) -> dict:
     """
@@ -39,13 +40,15 @@ def data_generation():
     # Load tickers from the JSON file
     tickers = load_tickers("src/data/tickers.json")
     
+    current_date = datetime.today().strftime("%Y-%m-%d")
+    
     # Fetch and save data for stocks
     print("Fetching stock data:")
-    stock_data = YFinanceUtils.fetch_multiple_data(tickers["stocks"], "2022-01-01", "2022-12-31", interval="1d")
+    stock_data = YFinanceUtils.fetch_multiple_data(tickers["stocks"], "2022-01-01", current_date, interval="1d")
     save_to_csv(stock_data, "src/data/stock", "stock")
 
     # Fetch and save data for cryptocurrencies
     print("Fetching cryptocurrency data:")
-    crypto_data = YFinanceUtils.fetch_multiple_data(tickers["cryptos"], "2022-01-01", "2022-12-31", interval="1d")
+    crypto_data = YFinanceUtils.fetch_multiple_data(tickers["cryptos"], "2022-01-01", current_date, interval="1d")
     save_to_csv(crypto_data, "src/data/crypto", "crypto")
 
