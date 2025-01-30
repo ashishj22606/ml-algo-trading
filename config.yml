@@ -1,0 +1,44 @@
+data:
+  stock_path: "src/data/stock/"          # Path to stock data files
+  crypto_path: "src/data/crypto/"        # Path to crypto data files
+  save_path: "output/"                   # Directory to save processed data
+  start_date: "2022-01-01"               # Start date for data fetching
+  end_date: "2026-12-31"                 # End date for data fetching
+  missing_value_strategy: "mean"         # Strategy for handling missing values ('mean', 'median', 'drop')
+
+model:
+  name: "RandomForestRegressor"          # Model name
+  n_estimators: 100                      # Number of trees in the forest
+  max_depth: 10                          # Maximum depth of the trees
+  min_samples_split: 2                   # Minimum number of samples required to split an internal node
+  min_samples_leaf: 1                    # Minimum number of samples required to be at a leaf node
+  random_state: 42                       # Random state for reproducibility
+  criterion: "squared_error"             # Split quality criterion ('squared_error', 'absolute_error', etc.)
+  max_features: "auto"                   # Number of features to consider at each split
+  bootstrap: true                        # Whether to use bootstrap sampling
+  oob_score: false                       # Use out-of-bag samples to estimate accuracy
+
+preprocessing:
+  features:                              # List of features to include
+    - Open
+    - High
+    - Low
+    - Volume
+    - MA_5
+    - MA_20
+    - Daily_Return
+    - Volatility
+  target: "Close"                        # Target column
+  scaling: "standard"                    # Scaling method ('standard', 'minmax', 'robust', or None)
+  test_size: 0.2                         # Fraction of data used for testing
+  shuffle: true                          # Shuffle the data before splitting
+
+logging:
+  level: "INFO"                          # Logging level ('DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL')
+  log_file: "logs/app.log"               # Path to log file
+
+runtime:
+  steps: 5                               # Number of future prediction steps
+  save_predictions: true                 # Whether to save predictions to a file
+  predictions_path: "output/predictions.csv" # Path to save predictions
+  num_threads: -1                        # Number of threads for parallelization (-1 uses all available cores)

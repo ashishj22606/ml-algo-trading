@@ -1,0 +1,27 @@
+Repo Structure
+
+ml-algo-trading/
+├── src/
+│   ├── data_processing/
+│   │   ├── data_generation.py
+│   │   ├── feature_engineering.py
+│   │   ├── __init__.py
+│   ├── models/
+│   │   ├── regression_model.py
+│   │   ├── __init__.py
+│   ├── utils/
+│   │   ├── logger.py
+│   │   ├── config.py
+│   │   ├── __init__.py
+├── tests/
+├── main.py
+├── requirements.txt
+├── README.md
+├── config.yaml
+├── .env
+
+
+1. Bollinger Band Width
+The Bollinger Band width is a volatility indicator that uses moving averages and their standard deviations:
+Bollinger Band Width: Helps measure relative price volatility.
+
