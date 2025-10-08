@@ -25,3 +25,18 @@ ml-algo-trading/
 The Bollinger Band width is a volatility indicator that uses moving averages and their standard deviations:
 Bollinger Band Width: Helps measure relative price volatility.
 
+For regression problems, focus on metrics like MAE, RMSE, or R².
+F1 Score, Precision, and Recall are useful for classification problems, not regression.
+
+Add streamlit app to plot graph based on model, ticker, date range 
+and plot the actual and predicted values, metrics (MAE, RMSE, R²) on the graph, and the models hyperparameters
+and next 5 future predictions
+
+Add news as a feature to the model. Maybe add LLM model to predict the stock price based on news
+
+Create Simulation to place market orders once we've good enough accuracy
+
+Make heikenashe candles as a feature to the model
+
+Market sentiment, results day, dividend day, stock split, etc as features to the model
+
